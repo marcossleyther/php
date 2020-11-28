@@ -1,3 +1,6 @@
+/*
+http://localhost/sites/php/
+*/
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +28,11 @@
     <div class="row">
         <div class="p-4 m-2 bg-primary text-white">      
             <?php
-            echo "Hola Mundo";
+            $nombre = "Marcos";
+            $edad=24;
+
+            echo "Tu nombre es ".$nombre. " y tienes ".$edad."<br>";
+            echo "Variables de tipo   ".gettype($nombre)." e ".gettype($edad);
             ?>
         </div>
     </div>
