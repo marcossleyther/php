@@ -25,9 +25,27 @@ http://localhost/sites/php/
       </div>
 <div class="container">
 
-    <div class="row">
+<div class="row">
     <div class="row-12">
         <div class="p-3 m-2 bg-primary text-white">      
+            <h3>Clase Condicional IF</h3>
+            <?php
+            $nombre = "Marcos";
+            $edad=4;
+
+            if($nombre=="Marcos" && $edad==24){
+                echo "Tu nombre es ".$nombre. " y tienes ".$edad."<br>";            
+            } else{
+                echo "No eres Marcos";
+            }
+?>
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+    <div class="row-12">
+        <div class="p-3 m-2 bg-info text-white">      
             <h3>Clase de Variables</h3>
             <?php
             $nombre = "Marcos";
