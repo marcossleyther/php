@@ -23,10 +23,12 @@ http://localhost/sites/php/
           <p class="lead">Home para consola</p>
         </div>
       </div>
-
 <div class="container">
+
     <div class="row">
-        <div class="p-4 m-2 bg-primary text-white">      
+    <div class="row-12">
+        <div class="p-3 m-2 bg-primary text-white">      
+            <h3>Clase de Variables</h3>
             <?php
             $nombre = "Marcos";
             $edad=24;
@@ -36,6 +38,27 @@ http://localhost/sites/php/
             ?>
         </div>
     </div>
+</div>
+
+<div class="row">
+    <div class="row-12">
+        <div class="p-3 m-2 bg-primary text-white">      
+            <h3>Clase de Operadores</h3>
+            <?php
+            $num1 = 8;
+            $num2 = 2;
+
+            echo "Suma: ".($num1 + $num2)."<br>";          
+            echo "Resta: ".($num1 - $num2)."<br>";          
+            echo "Mul: ".($num1 * $num2)."<br>";
+            echo "Div: ".($num1 / $num2)."<br>";
+            echo "Residuo: ".($num1 % $num2)."<br>";
+            echo "Potencia: ".($num1 ** $num2)."<br>";
+            
+            ?>
+        </div>
+    </div>
+</div>
 </div>
 
 
