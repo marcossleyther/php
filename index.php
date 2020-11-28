@@ -26,7 +26,61 @@ http://localhost/sites/php/
 <div class="container">
 
 <div class="row">
-    <div class="row-12">
+    <div class="col-6">
+        <div class="p-3 m-2 bg-warning text-white">      
+            <h3>Clase Bucle While</h3>
+            <?php
+            $nombre = "Marcos";
+            $edad=22;
+
+            while( $edad ==22){
+               echo $nombre." estas joven, hechale ganas";
+                $edad=0;
+            }
+            ?>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="p-3 m-2 bg-danger text-white">      
+            <h3>Clase Bucle For</h3>
+            <?php
+            $nombre = "Marcos";
+            $edad=22;
+
+            for($i=0; $i<3; $i++){
+                echo$nombre." eres el mejor ".$i."<br>";
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="p-3 m-2 bg-info text-white">      
+            <h3>Clase Condicional Switch</h3>
+            <?php
+            $nombre = "Marcos";
+            $edad=20;
+
+            switch($edad){
+                case 10:
+                    echo $nombre." tienes 10 años";
+                break;
+                case 15:
+                    echo $nombre." tienes 15 años";
+                break;
+                case 20:
+                    echo $nombre." tienes 20 años";
+                break;
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
         <div class="p-3 m-2 bg-primary text-white">      
             <h3>Clase Condicional IF</h3>
             <?php
@@ -38,13 +92,13 @@ http://localhost/sites/php/
             } else{
                 echo "No eres Marcos";
             }
-?>
+            ?>
         </div>
     </div>
 </div>
 
     <div class="row">
-    <div class="row-12">
+    <div class="col-12">
         <div class="p-3 m-2 bg-info text-white">      
             <h3>Clase de Variables</h3>
             <?php
@@ -59,7 +113,7 @@ http://localhost/sites/php/
 </div>
 
 <div class="row">
-    <div class="row-12">
+    <div class="col-12">
         <div class="p-3 m-2 bg-primary text-white">      
             <h3>Clase de Operadores</h3>
             <?php
