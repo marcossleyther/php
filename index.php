@@ -25,17 +25,52 @@ http://localhost/sites/php/
     <div class="container">
 
         <div class="row">
+            <div class="col-6">
+                <div class="p-3 m-2 bg-success text-white">
+                    <h3>Clase Break</h3>
+                    <?php
+                    $names = array("Carlos","Ana", "Luis", "Eli","Maria", "Alex ");
+
+                    echo "Break hasta Eli:<br>";
+                    foreach ($names as $name) {
+                        if($name=="Eli"){
+                        break;
+                        }
+                        echo "Valor: " . $name . "<br>";
+                    }echo"<br><br>";
+                    ?>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="p-3 m-2 bg-danger text-white">
+                    <h3>Clase Continue</h3>
+                    <?php
+                    $names = array("Carlos","Ana", "Luis", "Eli","Maria", "Alex ");
+
+                    echo "Continue en Ana:<br>";
+                    foreach ($names as $name) {
+                        if($name=="Ana"){
+                            continue;
+                        }
+                        echo "Valor: " . $name . "<br>";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-4">
                 <div class="p-3 m-2 bg-primary text-white">
                     <h3>Clase Arrays Numeros</h3>
                     <?php
-                    $nums = array(5,8,9,2);
-                    
-                    echo"Valores del Arreglo:<br>";
-                    for($i=0; $i<count($nums); $i++){
-                        echo"Posicion: ".$i." valor: ".$nums[$i]."<br>";
+                    $nums = array(5, 8, 9, 2);
+
+                    echo "Valores del Arreglo:<br>";
+                    for ($i = 0; $i < count($nums); $i++) {
+                        echo "Posicion: " . $i . " valor: " . $nums[$i] . "<br>";
                     }
-                    echo "<br>Valor en posicion 1: ".$nums[1];
+                    echo "<br>Valor en posicion 1: " . $nums[1];
                     ?>
                 </div>
             </div>
@@ -43,13 +78,13 @@ http://localhost/sites/php/
                 <div class="p-3 m-2 bg-warning text-white">
                     <h3>Clase Arrays Cadenas</h3>
                     <?php
-                    $names = array("Ana","Luis","Eli","Alex ");
-                    
-                    echo"Valores del Arreglo:<br>";
-                    for($i=0; $i<count($names); $i++){
-                        echo"Posicion: ".$i." valor: ".$names[$i]."<br>";
+                    $names = array("Ana", "Luis", "Eli", "Alex ");
+
+                    echo "Valores del Arreglo:<br>";
+                    for ($i = 0; $i < count($names); $i++) {
+                        echo "Posicion: " . $i . " valor: " . $names[$i] . "<br>";
                     }
-                    echo "<br>Valor en posicion 1: ".$names[1];
+                    echo "<br>Valor en posicion 1: " . $names[1];
                     ?>
                 </div>
             </div>
@@ -57,12 +92,13 @@ http://localhost/sites/php/
                 <div class="p-3 m-2 bg-success text-white">
                     <h3>Clase Arrays Foreach</h3>
                     <?php
-                    $names = array("Ana","Luis","Eli","Alex ");
-                    
-                    echo"Valores del Arreglo:<br>";
-                    foreach($names as $name){
-                        echo"Valor: ".$name."<br>";
+                    $names = array("Ana", "Luis", "Eli", "Alex ");
+
+                    echo "Valores del Arreglo:<br>";
+                    foreach ($names as $name) {
+                        echo "Valor: " . $name . "<br>";
                     }
+                    echo "<br><br>";
                     ?>
                 </div>
             </div>
