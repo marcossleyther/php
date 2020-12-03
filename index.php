@@ -18,38 +18,100 @@ http://localhost/sites/php/
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Consola de PHP</h1>
-            <p class="lead">Home para consola</p>
+            <h1 class="display-4">Inicios en PHP</h1>
+            <p class="lead">Consola para Php</p>
         </div>
     </div>
     <div class="container">
 
         <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-info text-white">
+                    <h2>POO</h2>
+                    <?php
+                    class Mascota{
+                    public $patas;
+                    public $nombre;
+
+                    function __construct($nombre, $patas){
+                        $this->nombre= $nombre;
+                        $this->patas = $patas;
+                    }
+
+                    public function getDesc(){
+                        if($this->patas==0){
+                            return "Tu mascota ".$this->nombre.", No tiene patas";
+                        
+                        }else{
+                            return "Tu mascota ".$this->nombre.", tiene ".$this->patas." patas";
+                        }
+                    }
+                    }
+                    
+                    $perro = new Mascota("Bethoven",3);
+                    $gato = new Mascota("Mishito",4);
+                    $culebra = new Mascota("Sindy",0);
+
+                    echo $perro->getDesc()."<br>";
+                    echo $gato->getDesc()."<br>";
+                    echo $culebra->getDesc()."<br>";
+                    
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-primary text-white">
+                    <h3> Funciones</h3>
+                    <?php
+                    function cal($sign, $num1, $num2)
+                    {
+                        switch ($sign) {
+                            case '+':
+                                return $num1 + $num2;
+                                break;
+
+                            case '-':
+                                return $num1 - $num2;
+                                break;
+                            default:
+                                return 0;
+                        }
+                    }
+                    echo "El resultado es: " . cal("+", 8, 4);
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-6">
                 <div class="p-3 m-2 bg-success text-white">
-                    <h3>Clase Break</h3>
+                    <h3> Break</h3>
                     <?php
-                    $names = array("Carlos","Ana", "Luis", "Eli","Maria", "Alex ");
+                    $names = array("Carlos", "Ana", "Luis", "Eli", "Maria", "Alex ");
 
                     echo "Break hasta Eli:<br>";
                     foreach ($names as $name) {
-                        if($name=="Eli"){
-                        break;
+                        if ($name == "Eli") {
+                            break;
                         }
                         echo "Valor: " . $name . "<br>";
-                    }echo"<br><br>";
+                    }
+                    echo "<br><br>";
                     ?>
                 </div>
             </div>
             <div class="col-6">
-                <div class="p-3 m-2 bg-danger text-white">
-                    <h3>Clase Continue</h3>
+                <div class="p-3 m-2 bg-info text-white">
+                    <h3> Continue</h3>
                     <?php
-                    $names = array("Carlos","Ana", "Luis", "Eli","Maria", "Alex ");
+                    $names = array("Carlos", "Ana", "Luis", "Eli", "Maria", "Alex ");
 
                     echo "Continue en Ana:<br>";
                     foreach ($names as $name) {
-                        if($name=="Ana"){
+                        if ($name == "Ana") {
                             continue;
                         }
                         echo "Valor: " . $name . "<br>";
@@ -62,7 +124,7 @@ http://localhost/sites/php/
         <div class="row">
             <div class="col-4">
                 <div class="p-3 m-2 bg-primary text-white">
-                    <h3>Clase Arrays Numeros</h3>
+                    <h3> Arrays Numeros</h3>
                     <?php
                     $nums = array(5, 8, 9, 2);
 
@@ -76,7 +138,7 @@ http://localhost/sites/php/
             </div>
             <div class="col-4">
                 <div class="p-3 m-2 bg-warning text-white">
-                    <h3>Clase Arrays Cadenas</h3>
+                    <h3> Arrays Cadenas</h3>
                     <?php
                     $names = array("Ana", "Luis", "Eli", "Alex ");
 
@@ -90,7 +152,7 @@ http://localhost/sites/php/
             </div>
             <div class="col-4">
                 <div class="p-3 m-2 bg-success text-white">
-                    <h3>Clase Arrays Foreach</h3>
+                    <h3> Arrays Foreach</h3>
                     <?php
                     $names = array("Ana", "Luis", "Eli", "Alex ");
 
@@ -105,8 +167,8 @@ http://localhost/sites/php/
         </div>
         <div class="row">
             <div class="col-6">
-                <div class="p-3 m-2 bg-warning text-white">
-                    <h3>Clase Bucle While</h3>
+                <div class="p-3 m-2 bg-success text-white">
+                    <h3> Bucle While</h3>
                     <?php
                     $nombre = "Marcos";
                     $edad = 22;
@@ -120,7 +182,7 @@ http://localhost/sites/php/
             </div>
             <div class="col-6">
                 <div class="p-3 m-2 bg-danger text-white">
-                    <h3>Clase Bucle For</h3>
+                    <h3> Bucle For</h3>
                     <?php
                     $nombre = "Marcos";
                     $edad = 22;
@@ -136,7 +198,7 @@ http://localhost/sites/php/
         <div class="row">
             <div class="col-12">
                 <div class="p-3 m-2 bg-info text-white">
-                    <h3>Clase Condicional Switch</h3>
+                    <h3> Condicional Switch</h3>
                     <?php
                     $nombre = "Marcos";
                     $edad = 20;
@@ -160,7 +222,7 @@ http://localhost/sites/php/
         <div class="row">
             <div class="col-12">
                 <div class="p-3 m-2 bg-primary text-white">
-                    <h3>Clase Condicional IF</h3>
+                    <h3> Condicional IF</h3>
                     <?php
                     $nombre = "Marcos";
                     $edad = 4;
@@ -178,7 +240,7 @@ http://localhost/sites/php/
         <div class="row">
             <div class="col-12">
                 <div class="p-3 m-2 bg-info text-white">
-                    <h3>Clase de Variables</h3>
+                    <h3>Variables</h3>
                     <?php
                     $nombre = "Marcos";
                     $edad = 24;
@@ -193,7 +255,7 @@ http://localhost/sites/php/
         <div class="row">
             <div class="col-12">
                 <div class="p-3 m-2 bg-primary text-white">
-                    <h3>Clase de Operadores</h3>
+                    <h3>Operadores</h3>
                     <?php
                     $num1 = 8;
                     $num2 = 2;
