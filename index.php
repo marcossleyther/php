@@ -26,39 +26,67 @@ http://localhost/sites/php/
 
         <div class="row">
             <div class="col-12">
+                <div class="p-3 m-2 bg-warning text-white">
+                    <h2>Static</h2>
+                    <?php
+                    class calculadora
+                    {
+                        public static function sumar($num1, $num2)
+                        {
+                            return $num1 + $num2;
+                        }
+                        public static function restar($num1, $num2)
+                        {
+                            return $num1 - $num2;
+                        }
+                    }
+                    echo "El resultado de la suma es: " . calculadora::sumar(5, 10)."<br>";
+                    echo "El resultado de la resta es: " . calculadora::restar(20, 10);
+
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
                 <div class="p-3 m-2 bg-success text-white">
                     <h2>Herencia</h2>
                     <?php
-        class animal{
-            public $nombre;
-            public $patas;
+                    class animal
+                    {
+                        public $nombre;
+                        public $patas;
 
-            function __construct($nombre, $patas){
-                $this->nombre=$nombre;
-                $this->patas=$patas;
-            }
-            
-            function comer(){
-                return"Estoy en lonche";
-            }
-        }
-        class perro extends animal{
-                function run(){
-                    return "Estoy corriendo";
-                }
-        }
+                        function __construct($nombre, $patas)
+                        {
+                            $this->nombre = $nombre;
+                            $this->patas = $patas;
+                        }
 
-        class Gato extends animal{
+                        function comer()
+                        {
+                            return "Estoy en lonche";
+                        }
+                    }
+                    class perro extends animal
+                    {
+                        function run()
+                        {
+                            return "Estoy corriendo";
+                        }
+                    }
 
-        }
+                    class Gato extends animal
+                    {
+                    }
 
-        $chucho = new perro("Chucho Lopez",4);
-        $gato = new Gato("Sariba",4); 
+                    $chucho = new perro("Chucho Lopez", 4);
+                    $gato = new Gato("Sariba", 4);
 
-        echo $chucho->run()." (el chucho)"."<br>";
-        echo $gato->comer()." (el gato)";
-                 
-                 ?>
+                    echo $chucho->run() . " (el chucho)" . "<br>";
+                    echo $gato->comer() . " (el gato)";
+
+                    ?>
                 </div>
             </div>
         </div>
