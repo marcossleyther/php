@@ -23,6 +23,53 @@ http://localhost/sites/php/
         </div>
     </div>
     <div class="container">
+    <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-warning text-white">
+                    <h2>Uso de Include</h2>
+                    <?php
+                    include('person.php');
+
+                    $person = new person("Juan","Lopez");
+                    echo $person->greetings();
+                    ?>
+                </div>
+            </div>
+    </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="p-3 m-2 bg-warning text-white">
+                    <h2>Formularios</h2>
+                    <form method="get" action="#">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <input type="text" class="form-control mb-2" id="n1" name="n1" placeholder="Numero...">
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" class="form-control mb-2" id="n2" name="n2" placeholder="Numero...">
+                            </div>
+
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary mb-2">Sumar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="p-3 m-2 bg-success text-white">
+                    <h2>Formularios GET</h2>
+                    <?php
+                    if (isset($_GET['n1']) && isset($_GET['n2'])) {
+                        echo $_GET['n1']+$_GET['n2'];
+                    } else {
+                        echo "Esperando calculo...";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-12">
@@ -40,7 +87,7 @@ http://localhost/sites/php/
                             return $num1 - $num2;
                         }
                     }
-                    echo "El resultado de la suma es: " . calculadora::sumar(5, 10)."<br>";
+                    echo "El resultado de la suma es: " . calculadora::sumar(5, 10) . "<br>";
                     echo "El resultado de la resta es: " . calculadora::restar(20, 10);
 
                     ?>
