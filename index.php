@@ -23,25 +23,61 @@ http://localhost/sites/php/
         </div>
     </div>
     <div class="container">
-    <div class="row">
+
+        <div class="row">
             <div class="col-12">
-                <div class="p-3 m-2 bg-warning text-white">
-                    <h2>Uso de Include</h2>
+                <div class="p-3 m-2 bg-success text-white">
+                    <h2>Conexion MySQL</h2>
+                    <?php
+                    include('conexion.php');
+
+                    $persona = $conn->query('Select * from persona');
+
+                    foreach ($persona as $fila) {
+                        echo "Nombre: " . $fila['nombres'] . " " . $fila['apellidos'] . " Tel. " . $fila['telefono'] . "<br>";
+                    }
+                    $conn = null;
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-info text-white">
+                    <h2>Namespace</h2>
+                    <?php
+                    include('automatizacion/auto.php');
+                    include('automovil/auto.php');
+
+                    $automotor = new \automovil\auto(4, 3);
+                    $auto = new \automatizacion\auto(6, "04/12/20");
+                    echo $automotor->getAuto() . "<br>";
+                    echo $auto->getAuto();
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="p-3 m-2 bg-dark text-white">
+                    <h2>Include</h2>
                     <?php
                     include('person.php');
 
-                    $person = new person("Juan","Lopez");
+                    $person = new person("Juan", "Lopez");
                     echo $person->greetings();
                     ?>
                 </div>
             </div>
-    </div>
+        </div>
 
         <div class="row">
             <div class="col-6">
                 <div class="p-3 m-2 bg-warning text-white">
                     <h2>Formularios</h2>
-                    <form method="get" action="#">
+                    <form method="post" action="#">
                         <div class="form-row align-items-center">
                             <div class="col-auto">
                                 <input type="text" class="form-control mb-2" id="n1" name="n1" placeholder="Numero...">
@@ -59,10 +95,10 @@ http://localhost/sites/php/
             </div>
             <div class="col-6">
                 <div class="p-3 m-2 bg-success text-white">
-                    <h2>Formularios GET</h2>
+                    <h2>Formularios POST</h2>
                     <?php
-                    if (isset($_GET['n1']) && isset($_GET['n2'])) {
-                        echo $_GET['n1']+$_GET['n2'];
+                    if (isset($_POST['n1']) && isset($_POST['n2'])) {
+                        echo $_POST['n1'] + $_POST['n2'];
                     } else {
                         echo "Esperando calculo...";
                     }
